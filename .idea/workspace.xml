@@ -4,7 +4,96 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0b159a5f-3e24-48e7-b59b-3dccf0f96ba7" name="Changes" comment="" />
+    <list default="true" id="0b159a5f-3e24-48e7-b59b-3dccf0f96ba7" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/scripts/cleanUnusedImages.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/scripts/cleanUnusedImages.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/uploads/1748965794325.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/uploads/1748965800858.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/uploads/1748965804965.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/uploads/1748967648700.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/uploads/1748967652636.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/uploads/1748967656519.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/uploads/1748967659129.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/uploads/1748967662538.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/uploads/1748967666597.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/uploads/1748967669608.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/uploads/1748967672862.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/uploads/1748967679172.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/uploads/1748967681980.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/uploads/1748967685184.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/uploads/1748969243344.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/uploads/1748972366567.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/uploads/1748972373527.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/uploads/1748972379434.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/uploads/1748972386839.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/uploads/1748972394320.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/uploads/1748972400240.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/uploads/1749022622210.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/uploads/1749023909807.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/uploads/1749024052471.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/uploads/1749024133789.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/uploads/1749024822033.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/uploads/1749025261923.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/uploads/1749025746045.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/uploads/1749025922257.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/uploads/1749026320155.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/uploads/1749026448050.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/uploads/1749026474578.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/uploads/1749026554265.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/uploads/1749026814836.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/uploads/1749027048559.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/uploads/1749027523374.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/uploads/1749027922926.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/uploads/1749028053373.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/uploads/1749038163058.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/uploads/1749038501869.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/uploads/1749038884673.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/uploads/1749041762202.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/uploads/1749041949011.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/uploads/1749042968557.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/uploads/1749043305493.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/uploads/1749043530021.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/uploads/1749048703629.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/uploads/1749048820491.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/uploads/1749048917611.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/uploads/1749048958769.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/uploads/1749049041281.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/uploads/1749049068483.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/uploads/1749049124703.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/uploads/1749049250620.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/uploads/1749049255569.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/uploads/1749049410516.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/uploads/1749050392566.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/uploads/1749115389244.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/uploads/1749115399544.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/uploads/1749115410463.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/uploads/1749115417806.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/uploads/1749115427758.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/uploads/1749115457858.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/uploads/1749115467682.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/uploads/1749115472299.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/uploads/1749115479367.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/uploads/1749115486766.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/uploads/1749115507172.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/uploads/1749116875715.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/uploads/1749116878520.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/uploads/1749116881795.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/uploads/1749116885527.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/uploads/1749116888817.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/uploads/1749116892725.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/uploads/1749118998062.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/uploads/1749119002085.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/uploads/1749119005479.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/uploads/1749119008689.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/uploads/1749119011879.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/uploads/1749119015031.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/uploads/1749119017732.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/uploads/1749119020824.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/uploads/1749119024053.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/uploads/1749122051390.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/uploads/1749122080218.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/uploads/1749122115456.webp" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -18,7 +107,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/frontend" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {
@@ -40,31 +129,32 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Node.js.whyFunctionalEcommerce.js.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;ToolWindow.Version Control.ShowToolbar&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;js.debugger.nextJs.config.created.client&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/jakaria/Desktop/webdevagency/frontend/public&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;npm.build.executor&quot;: &quot;Run&quot;,
-    &quot;npm.dev (1).executor&quot;: &quot;Run&quot;,
-    &quot;npm.dev.executor&quot;: &quot;Run&quot;,
-    &quot;npm.lint.executor&quot;: &quot;Run&quot;,
-    &quot;npm.nodemon.executor&quot;: &quot;Run&quot;,
-    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;/Users/jakaria/Library/Application Support/Herd/config/nvm/versions/node/v22.13.1/lib/node_modules/prettier&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;settings.javascript.prettier&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;/Applications/WebStorm.app/Contents/plugins/javascript-plugin/jsLanguageServicesImpl/external&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Node.js.whyFunctionalEcommerce.js.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "ToolWindow.Version Control.ShowToolbar": "false",
+    "git-widget-placeholder": "main",
+    "js.debugger.nextJs.config.created.client": "true",
+    "last_opened_file_path": "/Users/jakaria/Desktop/webdevagency/frontend/public",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "npm.build.executor": "Run",
+    "npm.clean-unused-images.executor": "Run",
+    "npm.dev (1).executor": "Run",
+    "npm.dev.executor": "Run",
+    "npm.lint.executor": "Run",
+    "npm.nodemon.executor": "Run",
+    "prettierjs.PrettierConfiguration.Package": "/Users/jakaria/Library/Application Support/Herd/config/nvm/versions/node/v22.13.1/lib/node_modules/prettier",
+    "settings.editor.selected.configurable": "settings.javascript.prettier",
+    "ts.external.directory.path": "/Applications/WebStorm.app/Contents/plugins/javascript-plugin/jsLanguageServicesImpl/external",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/frontend/public" />
@@ -81,7 +171,17 @@
       <recent name="$PROJECT_DIR$/src/components/ssr" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.nodemon">
+  <component name="RunManager" selected="npm.clean-unused-images">
+    <configuration name="clean-unused-images" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/backend/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="clean-unused-images" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <configuration name="dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/frontend/package.json" />
       <command value="run" />
@@ -114,8 +214,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.nodemon" />
+        <item itemvalue="npm.clean-unused-images" />
         <item itemvalue="npm.dev" />
+        <item itemvalue="npm.nodemon" />
         <item itemvalue="npm.lint" />
       </list>
     </recent_temporary>
@@ -163,6 +264,7 @@
       <workItem from="1750861934100" duration="2040000" />
       <workItem from="1750872667239" duration="384000" />
       <workItem from="1751021725119" duration="8403000" />
+      <workItem from="1751033870583" duration="1212000" />
     </task>
     <servers />
   </component>
