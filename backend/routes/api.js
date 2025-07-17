@@ -10,6 +10,9 @@ const BrandController = require("../controllers/BrandController");
 const ResultController = require("../controllers/ResultController");
 const blogController = require("../controllers/BlogController");
 const TestimonialController = require("../controllers/TestimonialController");
+const PortfolioController = require("../controllers/PortfolioController");
+
+
 
 // Admin
 const { adminProtect } = require("../middlewares/authAdminMiddleware");
@@ -63,6 +66,10 @@ const upload = multer({ storage }).fields([
     name: "userImage",
     maxCount: 1,
   },
+  {
+    name: "portfolioImg",
+    maxCount: 1,
+  }
 ]);
 
 // Serve images from the 'uploads' folder as static files
@@ -147,5 +154,12 @@ router.get("/blog/slug/:slug", blogController.getBlogBySlug);
 router.get("/blog/:id", blogController.getBlogById);
 router.patch("/blog/:id", upload, adminProtect, blogController.updateBlog);
 router.delete("/blog/:id", adminProtect, blogController.deleteBlog);
+
+// Routes for Portfolio
+router.post("/portfolio", upload, PortfolioController.createPortfolio);
+router.get("/portfolio", PortfolioController.getAllPortfolio);
+router.delete("/portfolio/:id", PortfolioController.deletePortfolioById);
+router.put("/portfolio/:id", upload, PortfolioController.updatePortfolio);
+
 
 module.exports = router;

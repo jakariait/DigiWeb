@@ -9,6 +9,8 @@ const links = [
   { name: "Landing Page", href: "/" },
   { name: "Meta Marketing", href: "/meta-marketing" },
   { name: "Pricing", href: "/" },
+  { name: "Our Portfolio", href: "/our-portfolio" },
+  { name: "Our Clients", href: "/our-clients" },
   { name: "About Us", href: "/about-us" },
   { name: "Contact", href: "/contact-us" },
 ];
@@ -40,17 +42,7 @@ const HeaderServer = () => {
               <span className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-red-500 transition-all duration-300 ease-in-out group-hover:w-full" />
             </li>
           ))}
-          <li className="relative group">
-            <a
-              href={getWhatsAppLink()}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-green-600"
-            >
-              WhatsApp
-            </a>
-            <span className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-red-500 transition-all duration-300 ease-in-out group-hover:w-full" />
-          </li>
+
         </ul>
 
         {/* Mobile Menu Toggle */}
