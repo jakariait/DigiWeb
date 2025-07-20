@@ -25,7 +25,7 @@ const HeaderServer = () => {
             <Image
               src={getBrandLogo()}
               alt="MySite Logo"
-              width={80}
+              width={100}
               height={50}
               priority
             />

@@ -11,7 +11,7 @@ export const getPhoneNumber = () => "tel:+8801611609288";
 
 export const getBrandName = () => "DigiWeb";
 
-export const getBrandLogo = () => "/20250514_224704.png";
+export const getBrandLogo = () => "/digiweb1.png";
 
 export const getMetaTitle = () => "DigiWeb";
 export const getMetaDescription = () => "DigiWeb";

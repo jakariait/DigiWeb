@@ -4,6 +4,7 @@ import Image from "next/image";
 import { FaFacebookF, FaLinkedinIn, FaWhatsapp } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { getBrandLogo, getBrandName, getWhatsAppLink } from "@/utils/brand";
+import Link from "next/link";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 30 },
@@ -33,13 +34,15 @@ const FooterSimple = () => {
           variants={fadeInUp}
           custom={0}
         >
-          <Image
-            src={getBrandLogo()}
-            alt="WebNinja Logo"
-            width={40}
-            height={40}
-          />
-          <span className="text-xl font-bold">{getBrandName()}</span>
+          <Link href="/">
+            <Image
+              src={getBrandLogo()}
+              alt="MySite Logo"
+              width={100}
+              height={50}
+              priority
+            />
+          </Link>
         </motion.div>
 
         {/* Middle: Social Icons */}
