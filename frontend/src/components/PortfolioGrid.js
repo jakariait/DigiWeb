@@ -77,7 +77,7 @@ const PortfolioGrid = () => {
                 {item.name}
               </h3>
               <a
-                href={`https://${item.link}`}
+                href={item.link}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-sm bg-white text-gray-800 px-4 py-1 rounded hover:bg-gray-200 transition"
