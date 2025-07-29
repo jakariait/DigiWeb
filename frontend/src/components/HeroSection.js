@@ -6,6 +6,7 @@ import FloatingShapes from "@/components/FloatingShapes";
 import UpworkSection from "@/components/UpworkSection";
 import CallOrWhatsApp from "@/components/CallOrWhatsApp";
 import ClientStatsSlider from "@/components/ClientStatsSlider";
+import Link from "next/link";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 30 },
@@ -106,15 +107,17 @@ export default function HeroSection() {
               viewport={{ once: false, amount: 0.3 }}
               custom={4}
             >
-              <button className="btn-indigo">
-                <span className="flex items-center">
-                  Start Your Project
-                  <ChevronRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </span>
-              </button>
-              <button className="px-8 py-4 border-2 border-white/20 text-white rounded-2xl font-semibold text-lg hover:bg-white/10 backdrop-blur-sm transform hover:scale-105 transition-all duration-300 cursor-pointer">
-                View Our Work
-              </button>
+              <div className="w-full text-center">
+                <Link
+                  href="/contact-us"
+                  className="btn-indigo group inline-block"
+                >
+                  <span className="flex items-center justify-center">
+                    Start Your Project
+                    <ChevronRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  </span>
+                </Link>
+              </div>
             </motion.div>
           </div>
 

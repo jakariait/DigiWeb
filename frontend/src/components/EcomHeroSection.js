@@ -100,26 +100,26 @@ const EcomHeroSection = () => {
             .
           </motion.p>
 
-          {/* CTA Buttons */}
-          <motion.div
-            className="flex flex-col sm:flex-row gap-6 justify-center items-center"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: false, amount: 0.3 }}
-            variants={fadeInUp}
-          >
-            <button className="btn-indigo">
-              <span className="relative z-10 flex items-center">
-                See Pricing
-                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
-              </span>
-              <div className="absolute inset-0 bg-gradient-to-r from-cyan-600 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-            </button>
+          {/*/!* CTA Buttons *!/*/}
+          {/*<motion.div*/}
+          {/*  className="flex flex-col sm:flex-row gap-6 justify-center items-center"*/}
+          {/*  initial="hidden"*/}
+          {/*  whileInView="visible"*/}
+          {/*  viewport={{ once: false, amount: 0.3 }}*/}
+          {/*  variants={fadeInUp}*/}
+          {/*>*/}
+          {/*  <button className="btn-indigo">*/}
+          {/*    <span className="relative z-10 flex items-center">*/}
+          {/*      See Pricing*/}
+          {/*      <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />*/}
+          {/*    </span>*/}
+          {/*    <div className="absolute inset-0 bg-gradient-to-r from-cyan-600 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>*/}
+          {/*  </button>*/}
 
-            <button className="px-4 py-2 border-2 border-white/30 rounded-2xl text-white font-medium text-lg hover:bg-white/10 hover:border-white/50 transform hover:scale-105 transition-all duration-300 backdrop-blur-sm">
-              Request a Quote
-            </button>
-          </motion.div>
+          {/*  <button className="px-4 py-2 border-2 border-white/30 rounded-2xl text-white font-medium text-lg hover:bg-white/10 hover:border-white/50 transform hover:scale-105 transition-all duration-300 backdrop-blur-sm">*/}
+          {/*    Request a Quote*/}
+          {/*  </button>*/}
+          {/*</motion.div>*/}
         </div>
       </div>
 
