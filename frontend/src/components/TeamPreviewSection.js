@@ -56,7 +56,7 @@ const TeamPreviewSection = ({ showLearnMoreButton = true }) => {
         className="max-w-6xl mx-auto text-center relative z-10"
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: false, amount: 0.3 }}
+        viewport={{ once: true, amount: 0.3 }}
       >
         <motion.h2
           className="text-4xl sm:text-5xl font-extrabold text-white mb-4"

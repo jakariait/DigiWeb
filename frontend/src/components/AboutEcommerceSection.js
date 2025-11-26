@@ -16,7 +16,7 @@ const AboutEcommerceSection = () => {
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          viewport={{ once: false, amount: 0.3 }}
+          viewport={{ once: true, amount: 0.3 }}
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
             The easiest way to build an online store
@@ -57,7 +57,7 @@ const AboutEcommerceSection = () => {
                 initial={{ opacity: 0, x: -30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ delay: i * 0.2, duration: 0.6 }}
-                viewport={{ once: false, amount: 0.3 }}
+                viewport={{ once: true, amount: 0.3 }}
               >
                 <div
                   className={`flex-shrink-0 w-12 h-12 bg-[#5039F7] rounded-lg flex items-center justify-center`}
@@ -81,7 +81,7 @@ const AboutEcommerceSection = () => {
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.7, delay: 0.3 }}
-          viewport={{ once: false, amount: 0.3 }}
+          viewport={{ once: true, amount: 0.3 }}
         >
           <div className="relative bg-gradient-to-br from-indigo-800 to-indigo-900 rounded-3xl p-8 border border-indigo-700 backdrop-blur-sm">
             <div className="flex items-center justify-between mb-6">
@@ -119,7 +119,7 @@ const AboutEcommerceSection = () => {
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ delay: i * 0.2 }}
-                  viewport={{ once: false, amount: 0.3 }}
+                  viewport={{ once: true, amount: 0.3 }}
                 >
                   <div className="flex items-center space-x-3">
                     <div

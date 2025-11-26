@@ -49,7 +49,7 @@ const WhyChooseUs = () => {
           variants={fadeInUp}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: false, amount: 0.3 }}
+          viewport={{ once: true, amount: 0.3 }}
           custom={0}
         >
           Why Choose {getBrandName()}?
@@ -61,7 +61,7 @@ const WhyChooseUs = () => {
           variants={fadeInUp}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: false, amount: 0.3 }}
+          viewport={{ once: true, amount: 0.3 }}
           custom={1}
         >
           We’re more than just a service provider — we’re your long-term digital
@@ -79,7 +79,7 @@ const WhyChooseUs = () => {
               variants={fadeInUp}
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: false, amount: 0.3 }}
+              viewport={{ once: true, amount: 0.3 }}
               custom={index + 2} // delay after heading and paragraph
               whileHover={{ scale: 1.03 }}
             >

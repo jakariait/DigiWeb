@@ -38,7 +38,7 @@ const EcomHeroSection = () => {
             className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-purple-500/20 to-cyan-500/20 border border-purple-500/30 backdrop-blur-sm mb-8"
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: false, amount: 0.3 }}
+            viewport={{ once: true, amount: 0.3 }}
             variants={fadeInUp}
           >
             <Zap className="w-4 h-4 text-yellow-400 mr-2" />
@@ -69,7 +69,7 @@ const EcomHeroSection = () => {
             className="text-xl md:text-2xl text-gray-300 mb-4 h-8"
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: false, amount: 0.3 }}
+            viewport={{ once: true, amount: 0.3 }}
             variants={fadeInUp}
           >
             <span>Custom E-Commerce Solutions for </span>

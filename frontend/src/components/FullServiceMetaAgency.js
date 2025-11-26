@@ -389,7 +389,7 @@ export default function FullServiceMetaAgency() {
             className="grid grid-cols-2 md:grid-cols-4 gap-8"
             initial="initial"
             whileInView="animate"
-            viewport={{ once: false, amount: 0.2 }}
+            viewport={{ once: true, amount: 0.2 }}
             variants={staggerContainer}
           >
             {agencyStats.map((stat, index) => {
@@ -428,7 +428,7 @@ export default function FullServiceMetaAgency() {
             className="text-center mb-16"
             initial="initial"
             whileInView="animate"
-            viewport={{ once: false, amount: 0.3 }}
+            viewport={{ once: true, amount: 0.3 }}
             variants={fadeInUp}
           >
             <h2 className="text-4xl font-bold mb-6 text-black">
@@ -438,7 +438,7 @@ export default function FullServiceMetaAgency() {
               className="w-24 h-1 bg-blue-600 mx-auto mb-6"
               initial={{ width: 0 }}
               whileInView={{ width: 96 }}
-              viewport={{ once: false, amount: 0.5 }}
+              viewport={{ once: true, amount: 0.5 }}
               transition={{ duration: 0.8, delay: 0.3 }}
             ></motion.div>
             <p className="text-gray-600 text-lg max-w-2xl mx-auto">
@@ -452,7 +452,7 @@ export default function FullServiceMetaAgency() {
             className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
             initial="initial"
             whileInView="animate"
-            viewport={{ once: false, amount: 0.2 }}
+            viewport={{ once: true, amount: 0.2 }}
             variants={staggerContainer}
           >
             {fullServices.map((category, index) => {
@@ -485,7 +485,7 @@ export default function FullServiceMetaAgency() {
                         className="border-l-2 border-blue-600/20 pl-4"
                         initial={{ opacity: 0, x: -20 }}
                         whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: false, amount: 0.5 }}
+                        viewport={{ once: true, amount: 0.5 }}
                         transition={{ duration: 0.4, delay: idx * 0.1 }}
                       >
                         <h4 className="font-semibold text-black mb-1">
@@ -521,7 +521,7 @@ export default function FullServiceMetaAgency() {
               className="w-24 h-1 bg-blue-600 mx-auto mb-6"
               initial={{ width: 0 }}
               whileInView={{ width: 96 }}
-              viewport={{ once: false, amount: 0.5 }}
+              viewport={{ once: true, amount: 0.5 }}
               transition={{ duration: 0.8, delay: 0.3 }}
             ></motion.div>
             <p className="text-gray-600 text-lg max-w-2xl mx-auto">
@@ -567,7 +567,7 @@ export default function FullServiceMetaAgency() {
                         className="flex items-center justify-center text-gray-600"
                         initial={{ opacity: 0, x: -20 }}
                         whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: false, amount: 0.5 }}
+                        viewport={{ once: true, amount: 0.5 }}
                         transition={{ duration: 0.4, delay: idx * 0.1 }}
                       >
                         <CheckCircle className="w-4 h-4 text-blue-600 mr-2" />
@@ -597,7 +597,7 @@ export default function FullServiceMetaAgency() {
             className="text-center mb-16"
             initial="initial"
             whileInView="animate"
-            viewport={{ once: false, amount: 0.3 }}
+            viewport={{ once: true, amount: 0.3 }}
             variants={fadeInUp}
           >
             <h2 className="text-4xl font-bold mb-6 text-black">
@@ -607,7 +607,7 @@ export default function FullServiceMetaAgency() {
               className="w-24 h-1 bg-blue-600 mx-auto mb-6"
               initial={{ width: 0 }}
               whileInView={{ width: 96 }}
-              viewport={{ once: false, amount: 0.5 }}
+              viewport={{ once: true, amount: 0.5 }}
               transition={{ duration: 0.8, delay: 0.3 }}
             ></motion.div>
             <p className="text-gray-600 text-lg max-w-2xl mx-auto">
@@ -620,7 +620,7 @@ export default function FullServiceMetaAgency() {
             className="grid md:grid-cols-2 lg:grid-cols-4 gap-8"
             initial="initial"
             whileInView="animate"
-            viewport={{ once: false, amount: 0.2 }}
+            viewport={{ once: true, amount: 0.2 }}
             variants={staggerContainer}
           >
             {successProcess.map((phase, index) => (
@@ -662,7 +662,7 @@ export default function FullServiceMetaAgency() {
                       className="flex items-center text-gray-600 text-sm"
                       initial={{ opacity: 0, x: -20 }}
                       whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: false, amount: 0.5 }}
+                      viewport={{ once: true, amount: 0.5 }}
                       transition={{ duration: 0.4, delay: idx * 0.1 }}
                     >
                       <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mr-2"></div>
@@ -683,7 +683,7 @@ export default function FullServiceMetaAgency() {
             <motion.div
               initial="initial"
               whileInView="animate"
-              viewport={{ once: false, amount: 0.3 }}
+              viewport={{ once: true, amount: 0.3 }}
               variants={fadeInLeft}
             >
               <h2 className="text-4xl font-bold mb-6 text-black">
@@ -722,7 +722,7 @@ export default function FullServiceMetaAgency() {
                     className="flex items-start"
                     initial={{ opacity: 0, x: -30 }}
                     whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: false, amount: 0.5 }}
+                    viewport={{ once: true, amount: 0.5 }}
                     transition={{ duration: 0.5, delay: index * 0.1 }}
                   >
                     <motion.div
@@ -747,7 +747,7 @@ export default function FullServiceMetaAgency() {
               className="bg-gradient-to-br from-blue-600/10 to-blue-600/5 rounded-2xl p-8 border border-gray-200"
               initial="initial"
               whileInView="animate"
-              viewport={{ once: false, amount: 0.3 }}
+              viewport={{ once: true, amount: 0.3 }}
               variants={fadeInRight}
               whileHover={{ scale: 1.02 }}
               transition={{ duration: 0.3 }}
@@ -774,7 +774,7 @@ export default function FullServiceMetaAgency() {
                     className="flex items-center text-gray-700"
                     initial={{ opacity: 0, x: -20 }}
                     whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: false, amount: 0.5 }}
+                    viewport={{ once: true, amount: 0.5 }}
                     transition={{ duration: 0.4, delay: index * 0.1 }}
                   >
                     <CheckCircle className="w-5 h-5 text-blue-600 mr-3" />

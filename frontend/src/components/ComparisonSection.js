@@ -48,7 +48,7 @@ export default function ComparisonSection() {
           className="text-4xl md:text-5xl font-bold mb-4 leading-snug"
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: false, amount: 0.3 }}
+          viewport={{ once: true, amount: 0.3 }}
           variants={fadeInUp}
           custom={-1} // Negative delay to show heading first
         >
@@ -61,7 +61,7 @@ export default function ComparisonSection() {
           className="text-lg text-purple-200 mb-14"
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: false, amount: 0.3 }}
+          viewport={{ once: true, amount: 0.3 }}
           variants={fadeInUp}
           custom={0}
         >
@@ -75,7 +75,7 @@ export default function ComparisonSection() {
             className="bg-white/10 backdrop-blur-lg rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-shadow border border-red-300/20"
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: false, amount: 0.3 }}
+            viewport={{ once: true, amount: 0.3 }}
             variants={{
               visible: {
                 transition: {
@@ -107,7 +107,7 @@ export default function ComparisonSection() {
             className="bg-white/5 backdrop-blur-xl rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-shadow border border-green-300/20"
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: false, amount: 0.3 }}
+            viewport={{ once: true, amount: 0.3 }}
             variants={{
               visible: {
                 transition: {

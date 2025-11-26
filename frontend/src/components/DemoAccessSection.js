@@ -52,7 +52,7 @@ const DemoAccessSection = () => {
           className="text-4xl md:text-5xl font-bold mb-4"
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: false, amount: 0.3 }}
+          viewport={{ once: true, amount: 0.3 }}
           variants={fadeInUp}
           custom={-1}
         >
@@ -63,7 +63,7 @@ const DemoAccessSection = () => {
           className="text-indigo-200 max-w-2xl mx-auto text-lg mb-12"
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: false, amount: 0.3 }}
+          viewport={{ once: true, amount: 0.3 }}
           variants={fadeInUp}
           custom={0}
         >
@@ -78,7 +78,7 @@ const DemoAccessSection = () => {
               custom={idx + 1}
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: false, amount: 0.3 }}
+              viewport={{ once: true, amount: 0.3 }}
               variants={fadeInUp}
               className="bg-gradient-to-br from-indigo-100 to-purple-100 rounded-2xl shadow-lg p-6 text-center transition-transform duration-300 hover:-translate-y-1  flex-col items-center justify-center"
             >

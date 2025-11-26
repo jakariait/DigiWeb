@@ -36,7 +36,7 @@ export default function HeroSection() {
               variants={fadeInUp}
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: false, amount: 0.3 }}
+              viewport={{ once: true, amount: 0.3 }}
               custom={0}
             >
               #1 Digital Growth Agency
@@ -48,7 +48,7 @@ export default function HeroSection() {
               variants={fadeInUp}
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: false, amount: 0.3 }}
+              viewport={{ once: true, amount: 0.3 }}
               custom={1}
             >
               We Build &
@@ -66,7 +66,7 @@ export default function HeroSection() {
               variants={fadeInUp}
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: false, amount: 0.3 }}
+              viewport={{ once: true, amount: 0.3 }}
               custom={2}
             >
               Through cutting-edge{" "}
@@ -91,7 +91,7 @@ export default function HeroSection() {
               variants={fadeInUp}
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: false, amount: 0.3 }}
+              viewport={{ once: true, amount: 0.3 }}
               custom={3}
               className="mb-8"
             >
@@ -104,7 +104,7 @@ export default function HeroSection() {
               variants={fadeInUp}
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: false, amount: 0.3 }}
+              viewport={{ once: true, amount: 0.3 }}
               custom={4}
             >
               <div className="w-full text-center">
@@ -127,7 +127,7 @@ export default function HeroSection() {
             variants={fadeInUp}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: false, amount: 0.3 }}
+            viewport={{ once: true, amount: 0.3 }}
             custom={5}
           >
             <UpworkSection />

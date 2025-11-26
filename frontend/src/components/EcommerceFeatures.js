@@ -138,7 +138,7 @@ const EcommerceFeatures = () => {
               custom={idx}
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: false, amount: 0.3 }}
+              viewport={{ once: true, amount: 0.3 }}
               variants={fadeInUp}
             >
               <div className="mb-2">{feature.icon}</div>

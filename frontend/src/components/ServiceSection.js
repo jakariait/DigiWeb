@@ -102,7 +102,7 @@ const ServiceSection = () => {
               initial="hidden"
               whileInView="visible"
               custom={index}
-              viewport={{ once: false, amount: 0.3 }}
+              viewport={{ once: true, amount: 0.3 }}
             >
               <div className="mx-auto mb-5 w-14 h-14 rounded-full bg-[#4338CA] flex items-center justify-center transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6">
                 <service.icon className="w-6 h-6 text-white group-hover:text-yellow-300 transition-colors duration-300" />
@@ -122,7 +122,6 @@ const ServiceSection = () => {
           </Link>
         ))}
       </div>
-
 
       <div className="mt-10 -mb-10">
         <CallOrWhatsApp />

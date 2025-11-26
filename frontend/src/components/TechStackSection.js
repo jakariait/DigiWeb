@@ -39,7 +39,7 @@ const TechStackSection = () => {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          viewport={{ once: false, amount: 0.3 }}
+          viewport={{ once: true, amount: 0.3 }}
         >
           Powered by the MERN Stack
           <span className="block h-1 w-24 bg-indigo-600 rounded mt-2 mx-auto"></span>
@@ -50,7 +50,7 @@ const TechStackSection = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          viewport={{ once: false, amount: 0.3 }}
+          viewport={{ once: true, amount: 0.3 }}
         >
           We build high-performance, scalable web applications using MongoDB, Express.js, React, and Node.js — a full-stack JavaScript solution trusted by top startups and enterprises.
         </motion.p>
@@ -63,7 +63,7 @@ const TechStackSection = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: idx * 0.1 }}
-              viewport={{ once: false, amount: 0.3 }}
+              viewport={{ once: true, amount: 0.3 }}
             >
               {item.icon}
               <h3 className="text-lg font-semibold text-gray-900 mb-2">{item.title}</h3>
