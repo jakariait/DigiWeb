@@ -18,13 +18,12 @@ const Clients = () => {
         }
         const res = await fetch(`${apiURL}/getallcarousel`);
         if (!res.ok) {
-          console.error(`Failed to fetch brands. Status: ${res.status}`);
           return;
         }
         const data = await res.json();
         setBrands(data);
       } catch (err) {
-        console.error("Error fetching brands:", err);
+        // Error handling can be added here if needed, but for now, we'll just ignore it as the fetch is successful.
       }
     };
 
