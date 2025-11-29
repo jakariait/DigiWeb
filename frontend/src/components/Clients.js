@@ -20,6 +20,10 @@ const Clients = async () => {
   const apiURL = process.env.NEXT_PUBLIC_API_URL;
   const brands = await fetchBrands(apiURL);
 
+  // Log the fetched brands data to the server console for debugging
+  console.log("Fetched Brands Data:", JSON.stringify(brands, null, 2));
+
+
   return (
     <section className="relative  px-2 overflow-hidden py-20">
       {/* Floating geometric shapes */}
