@@ -1,30 +1,35 @@
-import React from "react";
+"use client";
+
+import React, { useState, useEffect } from "react";
 import ImageComponent from "@/components/ImageComponent";
 import FloatingShapes from "@/components/FloatingShapes";
 import CallOrWhatsApp from "@/components/CallOrWhatsApp";
 
-async function fetchBrands(apiURL) {
-  try {
-    const res = await fetch(`${apiURL}/getallcarousel`, { cache: "no-store" });
-    if (!res.ok) {
-      const errorBody = await res.text();
-      console.error(
-        `Failed to fetch brands. Status: ${res.status}, Body: ${errorBody}`,
-      );
-      throw new Error(`Failed to fetch brands. Status: ${res.status}`);
-    }
-    const data = await res.json();
-    return data;
-  } catch (err) {
-    console.error("Error in fetchBrands:", err.message);
-    return [];
-  }
-}
+const Clients = () => {
+  const [brands, setBrands] = useState([]);
 
-const Clients = async () => {
-  const apiURL = process.env.NEXT_PUBLIC_API_URL;
-  const brands = await fetchBrands(apiURL);
+  useEffect(() => {
+    const fetchBrands = async () => {
+      try {
+        const apiURL = process.env.NEXT_PUBLIC_API_URL;
+        if (!apiURL) {
+          console.error("API URL is not configured");
+          return;
+        }
+        const res = await fetch(`${apiURL}/getallcarousel`);
+        if (!res.ok) {
+          console.error(`Failed to fetch brands. Status: ${res.status}`);
+          return;
+        }
+        const data = await res.json();
+        setBrands(data);
+      } catch (err) {
+        console.error("Error fetching brands:", err);
+      }
+    };
 
+    fetchBrands();
+  }, []);
 
   return (
     <section className="relative  px-2 overflow-hidden py-20">
@@ -45,18 +50,19 @@ const Clients = async () => {
         {/* Marquee container */}
         <div className="overflow-hidden relative">
           <div className="flex w-max animate-slide whitespace-nowrap gap-10">
-            {[...brands, ...brands].map((brand, index) => (
-              <div
-                key={`${brand.imgSrc}-${index}`}
-                className="bg-white rounded-xl shadow-sm p-4 flex justify-center items-center min-w-[120px]"
-              >
-                <ImageComponent
-                  imageName={brand.imgSrc}
-                  alt={`Client logo ${index + 1}`}
-                  className="h-24 sm:h-32 md:h-40 object-contain"
-                />
-              </div>
-            ))}
+            {brands.length > 0 &&
+              [...brands, ...brands].map((brand, index) => (
+                <div
+                  key={`${brand.imgSrc}-${index}`}
+                  className="bg-white rounded-xl shadow-sm p-4 flex justify-center items-center min-w-[120px]"
+                >
+                  <ImageComponent
+                    imageName={brand.imgSrc}
+                    alt={`Client logo ${index + 1}`}
+                    className="h-24 sm:h-32 md:h-40 object-contain"
+                  />
+                </div>
+              ))}
           </div>
         </div>
 
@@ -69,3 +75,4 @@ const Clients = async () => {
 };
 
 export default Clients;
+
