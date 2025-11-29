@@ -6,12 +6,17 @@ import CallOrWhatsApp from "@/components/CallOrWhatsApp";
 async function fetchBrands(apiURL) {
   try {
     const res = await fetch(`${apiURL}/getallcarousel`, { cache: "no-store" });
-    // cache: 'no-store' to always fetch fresh data on server-side
-    if (!res.ok) throw new Error("Failed to fetch brands");
+    if (!res.ok) {
+      const errorBody = await res.text();
+      console.error(
+        `Failed to fetch brands. Status: ${res.status}, Body: ${errorBody}`,
+      );
+      throw new Error(`Failed to fetch brands. Status: ${res.status}`);
+    }
     const data = await res.json();
     return data;
   } catch (err) {
-    console.error(err);
+    console.error("Error in fetchBrands:", err.message);
     return [];
   }
 }
@@ -19,9 +24,6 @@ async function fetchBrands(apiURL) {
 const Clients = async () => {
   const apiURL = process.env.NEXT_PUBLIC_API_URL;
   const brands = await fetchBrands(apiURL);
-
-  // Log the fetched brands data to the server console for debugging
-  console.log("Fetched Brands Data:", JSON.stringify(brands, null, 2));
 
 
   return (
