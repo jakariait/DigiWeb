@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import { Mail, Phone, CheckCircle } from "lucide-react";
 import ContactForm from "@/components/ContactForm";
 import FloatingShapes from "@/components/FloatingShapes";
@@ -20,6 +20,8 @@ const fadeInUp = {
 };
 
 const ContactSection = () => {
+  const [showEmail, setShowEmail] = useState(false);
+
   return (
     <section className="text-white py-16 px-6 relative overflow-hidden">
       <FloatingShapes />
@@ -78,11 +80,20 @@ const ContactSection = () => {
                   </div>
                   <div>
                     <h4 className="font-semibold text-lg">Email Us</h4>
-                    <p className="text-gray-300">
-                      <a href="mailto:hello@digiweb.digital">
-                        hello@digiweb.digital
-                      </a>
-                    </p>
+                    {showEmail ? (
+                      <p className="text-gray-300">
+                        <a href="mailto:jakariait@gmail.com">
+                          jakariait@gmail.com
+                        </a>
+                      </p>
+                    ) : (
+                      <span
+                        className="text-white cursor-pointer hover:text-indigo-300 transition-colors"
+                        onClick={() => setShowEmail(true)}
+                      >
+                        Click to reveal email
+                      </span>
+                    )}
                   </div>
                 </div>
 

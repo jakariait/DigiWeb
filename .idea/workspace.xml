@@ -82,7 +82,7 @@
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.nodemon">
+  <component name="RunManager" selected="npm.dev">
     <configuration name="clean-unused-images" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/backend/package.json" />
       <command value="run" />
@@ -125,8 +125,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.nodemon" />
         <item itemvalue="npm.dev" />
+        <item itemvalue="npm.nodemon" />
         <item itemvalue="npm.clean-unused-images" />
         <item itemvalue="npm.lint" />
       </list>
@@ -184,6 +184,7 @@
       <workItem from="1757250477150" duration="887000" />
       <workItem from="1764006774897" duration="1751000" />
       <workItem from="1764159303785" duration="2247000" />
+      <workItem from="1764410183164" duration="2201000" />
     </task>
     <servers />
   </component>
