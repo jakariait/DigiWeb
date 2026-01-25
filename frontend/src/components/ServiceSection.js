@@ -93,11 +93,11 @@ const ServiceSection = () => {
       </div>
 
       {/* Service Cards */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2 max-w-6xl mx-auto relative z-10">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2 max-w-6xl mx-auto relative z-10 ">
         {services.map((service, index) => (
-          <Link key={index} href={service.href} aria-label={service.title}>
+          <Link key={index} href={service.href} aria-label={service.title} className="h-full">
             <motion.div
-              className="bg-white group rounded-2xl shadow-md p-6 text-center transition-transform hover:shadow-xl hover:-translate-y-1 cursor-pointer"
+              className="bg-white group rounded-2xl shadow-md p-6 text-center transition-transform hover:shadow-xl hover:-translate-y-1 cursor-pointer h-full"
               variants={fadeInUp}
               initial="hidden"
               whileInView="visible"
