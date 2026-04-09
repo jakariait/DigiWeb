@@ -23,7 +23,7 @@ const teamMembers = [
   {
     name: "Ridwan H. Rifat",
     role: "Co-Founder & Marketing Lead",
-    image: "/hero-img.jpeg",
+    image: "/rifat.jpeg",
     bio: "Passionate marketer and co-founder focused on scaling brands through creative strategy and performance marketing.",
     socials: {
       facebook: "https://www.facebook.com/iamrifatt",
