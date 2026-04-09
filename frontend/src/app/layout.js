@@ -2,6 +2,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { getMetaDescription, getMetaTitle } from "@/utils/brand";
 import GoogleTagManager from "@/components/GoogleTagManager";
+import RouteChangeTracker from "@/components/RouteChangeTracker";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -29,6 +30,7 @@ export default function RootLayout({ children }) {
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <GoogleTagManager />
+        <RouteChangeTracker />
         {children}
       </body>
     </html>
