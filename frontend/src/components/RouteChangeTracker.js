@@ -1,9 +1,9 @@
 "use client";
 
-import { useEffect } from "react";
+import { Suspense, useEffect } from "react";
 import { usePathname, useSearchParams } from "next/navigation";
 
-export default function RouteChangeTracker() {
+function RouteChangeTrackerInner() {
   const pathname = usePathname();
   const searchParams = useSearchParams();
 
@@ -23,4 +23,12 @@ export default function RouteChangeTracker() {
   }, [pathname, searchParams]);
 
   return null;
+}
+
+export default function RouteChangeTracker() {
+  return (
+    <Suspense fallback={null}>
+      <RouteChangeTrackerInner />
+    </Suspense>
+  );
 }

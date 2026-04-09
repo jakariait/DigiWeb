@@ -1,41 +1,10 @@
 "use client";
 
 import Script from "next/script";
-import { usePathname, useSearchParams } from "next/navigation";
-import { useEffect, useCallback, useRef } from "react";
 
 const GTM_ID = "GTM-K8RP3DB6";
 
-function pushToDataLayer(data) {
-  if (typeof window !== "undefined") {
-    window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push(data);
-  }
-}
-
 export default function GoogleTagManager() {
-  const pathname = usePathname();
-  const searchParams = useSearchParams();
-  const initialized = useRef(false);
-
-  const trackPageView = useCallback(() => {
-    const url = pathname + (searchParams?.toString() ? `?${searchParams.toString()}` : "");
-    pushToDataLayer({
-      event: "page_view",
-      page: url,
-      pagePath: pathname,
-      pageTitle: document?.title || "",
-    });
-  }, [pathname, searchParams]);
-
-  useEffect(() => {
-    if (!initialized.current) {
-      initialized.current = true;
-      pushToDataLayer({ event: "gtm.js", "gtm.start": Date.now(), "gtm.uniqueEventId": 0 });
-    }
-    trackPageView();
-  }, [trackPageView]);
-
   return (
     <>
       <Script id="gtm-script" strategy="afterInteractive">
