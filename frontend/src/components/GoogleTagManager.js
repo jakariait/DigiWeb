@@ -2,19 +2,26 @@
 
 import Script from "next/script";
 import { usePathname } from "next/navigation";
-import { useEffect } from "react";
+import { useEffect, useCallback } from "react";
+
+function pushToDataLayer(data) {
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push(data);
+}
 
 export default function GoogleTagManager() {
   const pathname = usePathname();
 
-  // Route change push to GTM
-  useEffect(() => {
-    window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push({
-      event: "pageview",
-      page: pathname,
+  const trackPageView = useCallback((path) => {
+    pushToDataLayer({
+      event: "page_view",
+      page: path,
     });
-  }, [pathname]);
+  }, []);
+
+  useEffect(() => {
+    trackPageView(pathname);
+  }, [pathname, trackPageView]);
 
   return (
     <>
