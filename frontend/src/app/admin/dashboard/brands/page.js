@@ -1,11 +1,11 @@
 import React from "react";
-import CarouselUpload from "@/components/BrandUpload";
+import BrandUpload from "@/components/BrandUpload";
 
 const Page = () => {
   return (
-    <div>
-      <CarouselUpload />
-    </div>
+    <>
+      <BrandUpload />
+    </>
   );
 };
 

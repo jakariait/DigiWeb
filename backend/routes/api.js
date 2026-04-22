@@ -109,6 +109,8 @@ router.post(
 );
 router.get("/getallcarousel", BrandController.getAllCarousel);
 
+router.put("/reordercarousel", adminProtect, BrandController.reorderCarousel);
+
 router.delete(
   "/deletebyidcarousel/:id",
   adminProtect,

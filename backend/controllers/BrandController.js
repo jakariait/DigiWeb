@@ -6,7 +6,7 @@ const createCarousel = async (req, res) => {
       return res.status(400).json({ message: "Image file is required" });
     }
 
-    const fileName = req.files.imgSrc[0].filename; // Store only file name
+    const fileName = req.files.imgSrc[0].filename;
     const carousel = await CarouselService.createCarousel(fileName);
 
     res.status(201).json(carousel);
@@ -23,6 +23,7 @@ const getAllCarousel = async (req, res) => {
     return res.status(500).json({ message: error.message });
   }
 };
+
 const deleteByIdCarousel = async (req, res) => {
   try {
     const { id } = req.params;
@@ -36,8 +37,22 @@ const deleteByIdCarousel = async (req, res) => {
   }
 };
 
+const reorderCarousel = async (req, res) => {
+  try {
+    const { carouselIds } = req.body;
+    if (!carouselIds || !Array.isArray(carouselIds)) {
+      return res.status(400).json({ message: "Carousel IDs array is required" });
+    }
+    await CarouselService.reorderCarousel(carouselIds);
+    return res.status(200).json({ status: "success", message: "Carousel order saved" });
+  } catch (error) {
+    return res.status(500).json({ message: error.message });
+  }
+};
+
 module.exports = {
   createCarousel,
   getAllCarousel,
   deleteByIdCarousel,
+  reorderCarousel,
 };
