@@ -5,6 +5,7 @@ const DataSchema = mongoose.Schema(
     portfolioImg: { type: String, required: true },
     name: { type: String, required: true },
     link: { type: String, required: true },
+    order: { type: Number, default: 0 },
   },
   {
     timestamps: true,

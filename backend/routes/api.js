@@ -156,10 +156,11 @@ router.patch("/blog/:id", upload, adminProtect, blogController.updateBlog);
 router.delete("/blog/:id", adminProtect, blogController.deleteBlog);
 
 // Routes for Portfolio
-router.post("/portfolio", upload, PortfolioController.createPortfolio);
+router.put("/portfolio/reorder", adminProtect, PortfolioController.reorderPortfolio);
+router.post("/portfolio", upload, adminProtect, PortfolioController.createPortfolio);
 router.get("/portfolio", PortfolioController.getAllPortfolio);
-router.delete("/portfolio/:id", PortfolioController.deletePortfolioById);
-router.put("/portfolio/:id", upload, PortfolioController.updatePortfolio);
+router.delete("/portfolio/:id", adminProtect, PortfolioController.deletePortfolioById);
+router.put("/portfolio/:id", upload, adminProtect, PortfolioController.updatePortfolio);
 
 
 module.exports = router;

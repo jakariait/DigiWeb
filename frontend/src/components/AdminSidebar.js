@@ -15,11 +15,8 @@ const AdminHeader = () => {
 
   const menuItems = [
     { name: "Dashboard", path: "/admin/dashboard" },
-    { name: "Blogs", path: "/admin/dashboard/blogs" },
     { name: "Brands", path: "/admin/dashboard/brands" },
-    { name: "Results", path: "/admin/dashboard/results" },
-    { name: "Testimonial", path: "/admin/dashboard/testimonial" },
-    { name: "FAQ", path: "/admin/dashboard/faq" },
+    { name: "Portfolios", path: "/admin/dashboard/portfolios" },
   ];
 
   const handleLogout = async () => {

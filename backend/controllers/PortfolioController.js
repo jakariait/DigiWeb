@@ -111,9 +111,35 @@ const updatePortfolio = async (req, res) => {
   }
 };
 
+// Reorder Portfolios
+const reorderPortfolio = async (req, res) => {
+  try {
+    const { portfolioIds } = req.body;
+
+    if (!portfolioIds || !Array.isArray(portfolioIds)) {
+      return res.status(400).json({ message: "Portfolio IDs array is required" });
+    }
+
+    await PortfolioService.reorderPortfolio(portfolioIds);
+
+    return res.status(200).json({
+      status: "success",
+      message: "Portfolio order saved successfully",
+    });
+  } catch (error) {
+    console.error("Reorder error:", error);
+    return res.status(500).json({
+      status: "error",
+      message: "Failed to save portfolio order",
+      error: error.message,
+    });
+  }
+};
+
 module.exports = {
   createPortfolio,
   getAllPortfolio,
   deletePortfolioById,
   updatePortfolio,
+  reorderPortfolio,
 };
