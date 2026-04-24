@@ -19,6 +19,7 @@ import {
   Typography,
 } from "@mui/material";
 import useAuthAdminStore from "@/store/AuthAdminStore";
+import Link from "next/link";
 
 const columns = [
   { id: "serialNumber", label: "S.No.", minWidth: 50, align: "center" },
@@ -28,6 +29,7 @@ const columns = [
   { id: "services", label: "Services", minWidth: 100 },
   { id: "message", label: "Message", minWidth: 270 },
   { id: "served", label: "Status", minWidth: 100, align: "center" },
+  { id: "lead", label: "Lead", minWidth: 140, align: "center" },
   { id: "actions", label: "Actions", minWidth: 100, align: "center" },
 ];
 
@@ -90,6 +92,24 @@ const ContactTable = () => {
       if (!res.ok) throw new Error("Failed to update status");
 
       setContacts((prev) => prev.map((c) => (c._id === id ? updated : c)));
+    } catch (err) {
+      alert(err.message);
+    }
+  };
+
+  const handleConvertToLead = async (id) => {
+    try {
+      const res = await fetch(`${apiUrl}/contacts/${id}/convert`, {
+        method: "POST",
+        headers: { Authorization: `Bearer ${token}` },
+      });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.message || "Failed to convert");
+      setContacts((prev) =>
+        prev.map((c) =>
+          c._id === id ? { ...c, leadId: data.lead?._id || data.contact?.leadId } : c,
+        ),
+      );
     } catch (err) {
       alert(err.message);
     }
@@ -169,6 +189,34 @@ const ContactTable = () => {
                                 >
                                   {value ? "Served" : "Pending"}
                                 </Button>
+                              </TableCell>
+                            );
+                          }
+
+                          if (col.id === "lead") {
+                            return (
+                              <TableCell key={col.id} align="center">
+                                {contact.leadId ? (
+                                  <Link
+                                    href={`/admin/dashboard/leads/${contact.leadId}`}
+                                    className="inline-block rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1 text-xs font-medium text-emerald-700 hover:bg-emerald-100"
+                                  >
+                                    View Lead →
+                                  </Link>
+                                ) : (
+                                  <Button
+                                    variant="contained"
+                                    size="small"
+                                    sx={{
+                                      bgcolor: "#f97316",
+                                      "&:hover": { bgcolor: "#ea580c" },
+                                      textTransform: "none",
+                                    }}
+                                    onClick={() => handleConvertToLead(contact._id)}
+                                  >
+                                    Convert to Lead
+                                  </Button>
+                                )}
                               </TableCell>
                             );
                           }

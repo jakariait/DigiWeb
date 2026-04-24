@@ -60,7 +60,22 @@ const deleteContact = async (req, res) => {
   }
 };
 
-
+// Convert an existing Contact into a Lead (idempotent)
+const convertContactToLead = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const result = await contactService.convertContactToLead(id);
+    res.status(200).json({
+      message: result.alreadyLinked
+        ? 'Contact already linked to a lead'
+        : 'Contact converted to lead',
+      ...result,
+    });
+  } catch (error) {
+    const status = error.message === 'Contact not found' ? 404 : 500;
+    res.status(status).json({ message: error.message });
+  }
+};
 
 
 module.exports = {
@@ -69,4 +84,5 @@ module.exports = {
   getContactById,
   updateContact,
   deleteContact,
+  convertContactToLead,
 };

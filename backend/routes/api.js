@@ -83,6 +83,7 @@ router.get("/contacts", adminProtect,  contactController.getAllContacts);
 router.get("/contacts/:id", adminProtect, contactController.getContactById);
 router.put("/contacts/:id", adminProtect, contactController.updateContact);
 router.delete("/contacts/:id", adminProtect, contactController.deleteContact);
+router.post("/contacts/:id/convert", adminProtect, contactController.convertContactToLead);
 
 // Admin Login route
 router.post("/admin/login", AdminController.loginAdmin);

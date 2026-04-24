@@ -24,6 +24,11 @@ const generateInvoiceNumber = async () => {
 const currencySymbol = (code) =>
   ({ BDT: "৳", USD: "$", EUR: "€", INR: "₹" }[code] || code + " ");
 
+// pdfkit's built-in Helvetica only covers WinAnsi glyphs — it can't render ৳ or ₹.
+// Use ASCII-safe labels inside the PDF so no font embedding is required.
+const pdfCurrencyLabel = (code) =>
+  ({ BDT: "Tk ", USD: "$", EUR: "EUR ", INR: "Rs " }[code] || code + " ");
+
 // -----------------------------------------------------------------------------
 // Create invoice
 // -----------------------------------------------------------------------------
@@ -166,7 +171,8 @@ const streamInvoicePdf = asyncHandler(async (req, res) => {
   }
   if (!invoice) return res.status(404).json({ message: "Invoice not found" });
 
-  const sym = currencySymbol(invoice.currency);
+  // Use PDF-safe labels (pdfkit's Helvetica can't render ৳ or ₹)
+  const sym = pdfCurrencyLabel(invoice.currency);
 
   res.setHeader("Content-Type", "application/pdf");
   res.setHeader(
