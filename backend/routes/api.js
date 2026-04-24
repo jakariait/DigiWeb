@@ -11,6 +11,8 @@ const ResultController = require("../controllers/ResultController");
 const blogController = require("../controllers/BlogController");
 const TestimonialController = require("../controllers/TestimonialController");
 const PortfolioController = require("../controllers/PortfolioController");
+const LeadController = require("../controllers/LeadController");
+const InvoiceController = require("../controllers/InvoiceController");
 
 
 
@@ -163,6 +165,36 @@ router.post("/portfolio", upload, adminProtect, PortfolioController.createPortfo
 router.get("/portfolio", PortfolioController.getAllPortfolio);
 router.delete("/portfolio/:id", adminProtect, PortfolioController.deletePortfolioById);
 router.put("/portfolio/:id", upload, adminProtect, PortfolioController.updatePortfolio);
+
+
+// ============================================================
+// CRM - Lead Management Routes
+// ============================================================
+router.get("/leads/stats", adminProtect, LeadController.getLeadStats);
+router.post("/leads", adminProtect, LeadController.createLead);
+router.get("/leads", adminProtect, LeadController.getAllLeads);
+router.get("/leads/:id", adminProtect, LeadController.getLeadById);
+router.put("/leads/:id", adminProtect, LeadController.updateLead);
+router.patch("/leads/:id/status", adminProtect, LeadController.updateLeadStatus);
+router.patch("/leads/:id/assign", adminProtect, LeadController.assignLead);
+router.post("/leads/:id/activity", adminProtect, LeadController.addActivity);
+router.delete("/leads/:id", adminProtect, LeadController.deleteLead);
+
+// ============================================================
+// CRM - Invoice Routes
+// ============================================================
+router.get("/invoices/stats", adminProtect, InvoiceController.getInvoiceStats);
+router.post("/invoices", adminProtect, InvoiceController.createInvoice);
+router.get("/invoices", adminProtect, InvoiceController.getAllInvoices);
+// Public share — no auth so client can view & pay
+router.get("/invoices/public/:token", InvoiceController.getInvoiceByToken);
+router.get("/invoices/public/:token/pdf", InvoiceController.streamInvoicePdf);
+router.get("/invoices/:id", adminProtect, InvoiceController.getInvoiceById);
+router.get("/invoices/:id/pdf", adminProtect, InvoiceController.streamInvoicePdf);
+router.put("/invoices/:id", adminProtect, InvoiceController.updateInvoice);
+router.patch("/invoices/:id/payment", adminProtect, InvoiceController.recordPayment);
+router.patch("/invoices/:id/send", adminProtect, InvoiceController.markSent);
+router.delete("/invoices/:id", adminProtect, InvoiceController.deleteInvoice);
 
 
 module.exports = router;

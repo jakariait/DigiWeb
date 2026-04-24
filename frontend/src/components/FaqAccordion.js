@@ -11,7 +11,7 @@ const FaqAccordion = ({ faqs = [] }) => {
 
   useEffect(() => {
     const calculatedHeights = refs.current.map((ref) =>
-      ref ? ref.scrollHeight : 0
+      ref ? ref.scrollHeight : 0,
     );
     setHeights(calculatedHeights);
   }, [faqs]);
@@ -32,7 +32,10 @@ const FaqAccordion = ({ faqs = [] }) => {
 
         <div className="space-y-4 md:w-4xl mx-auto text-gray-100 w-full max-w-4xl">
           {faqs.map((faq, index) => (
-            <div key={index} className="border border-gray-700 rounded-lg overflow-hidden transition-all duration-300">
+            <div
+              key={index}
+              className="border border-gray-700 rounded-lg overflow-hidden transition-all duration-300"
+            >
               <button
                 className="w-full text-left px-4 py-3 flex justify-between items-center cursor-pointer focus:outline-none"
                 onClick={() => toggle(index)}
@@ -48,14 +51,13 @@ const FaqAccordion = ({ faqs = [] }) => {
               <div
                 ref={(el) => (refs.current[index] = el)}
                 style={{
-                  maxHeight: activeIndex === index ? `${heights[index]}px` : "0px",
+                  maxHeight:
+                    activeIndex === index ? `${heights[index]}px` : "0px",
                   opacity: activeIndex === index ? 1 : 0,
                 }}
                 className="transition-all duration-500 ease-in-out px-4 overflow-hidden"
               >
-                <div className="pb-4 text-gray-300">
-                  {faq.answer}
-                </div>
+                <div className="pb-4 text-gray-300">{faq.answer}</div>
               </div>
             </div>
           ))}
