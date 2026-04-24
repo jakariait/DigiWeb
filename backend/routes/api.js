@@ -172,6 +172,8 @@ router.put("/portfolio/:id", upload, adminProtect, PortfolioController.updatePor
 // CRM - Lead Management Routes
 // ============================================================
 router.get("/leads/stats", adminProtect, LeadController.getLeadStats);
+router.get("/leads/followups/today", adminProtect, LeadController.getTodaysFollowUps);
+router.patch("/leads/:id/followedup", adminProtect, LeadController.markFollowedUp);
 router.post("/leads", adminProtect, LeadController.createLead);
 router.get("/leads", adminProtect, LeadController.getAllLeads);
 router.get("/leads/:id", adminProtect, LeadController.getLeadById);

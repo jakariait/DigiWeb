@@ -1,10 +1,15 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import useLeadStore from "@/store/LeadStore";
 import useInvoiceStore from "@/store/InvoiceStore";
-import { formatMoney, formatDate, statusColor, LEAD_STATUSES } from "@/utils/crm";
+import {
+  formatMoney,
+  formatDate,
+  statusColor,
+  LEAD_STATUSES,
+} from "@/utils/crm";
 
 const StatCard = ({ label, value, sub, tone = "orange" }) => {
   const tones = {
@@ -29,13 +34,34 @@ const StatCard = ({ label, value, sub, tone = "orange" }) => {
 };
 
 export default function CrmDashboard() {
-  const { stats: leadStats, fetchStats: fetchLeadStats } = useLeadStore();
+  const {
+    stats: leadStats,
+    fetchStats: fetchLeadStats,
+    todayFollowUps,
+    pendingFollowUps,
+    fetchTodaysFollowUps,
+    markFollowedUp,
+  } = useLeadStore();
   const { stats: invStats, fetchStats: fetchInvStats } = useInvoiceStore();
+  const [activeTab, setActiveTab] = useState("today");
+  const [markingId, setMarkingId] = useState(null);
 
   useEffect(() => {
     fetchLeadStats();
     fetchInvStats();
-  }, [fetchLeadStats, fetchInvStats]);
+    fetchTodaysFollowUps();
+  }, [fetchLeadStats, fetchInvStats, fetchTodaysFollowUps]);
+
+  const handleMarkFollowedUp = async (lead) => {
+    setMarkingId(lead._id);
+    try {
+      await markFollowedUp(lead._id, { notes: "Follow-up completed" });
+    } catch (e) {
+      console.error(e);
+    } finally {
+      setMarkingId(null);
+    }
+  };
 
   const counts = Object.fromEntries(
     (leadStats?.byStatus || []).map((s) => [s._id, s.count]),
@@ -76,14 +102,28 @@ export default function CrmDashboard() {
       {/* KPI grid */}
       <div className="grid grid-cols-2 gap-3 md:grid-cols-4">
         <StatCard label="Total Leads" value={totalLeads} tone="blue" />
-        <StatCard label="Open Pipeline" value={openLeads} sub="Not yet won/lost" tone="orange" />
-        <StatCard label="Won Deal Value" value={formatMoney(wonValue, "BDT")} tone="emerald" />
-        <StatCard label="Amount Due" value={formatMoney(totalDue, "BDT")} tone="rose" />
+        <StatCard
+          label="Open Pipeline"
+          value={openLeads}
+          tone="orange"
+        />
+        <StatCard
+          label="Won Deal Value"
+          value={formatMoney(wonValue, "BDT")}
+          tone="emerald"
+        />
+        <StatCard
+          label="Amount Due"
+          value={formatMoney(totalDue, "BDT")}
+          tone="rose"
+        />
       </div>
 
       {/* Pipeline breakdown */}
       <div className="rounded-xl border border-gray-200 bg-white p-5 shadow-sm">
-        <h2 className="text-sm font-semibold text-gray-700">Pipeline by stage</h2>
+        <h2 className="text-sm font-semibold text-gray-700">
+          Pipeline by stage
+        </h2>
         <div className="mt-4 grid grid-cols-2 gap-3 md:grid-cols-6">
           {LEAD_STATUSES.map((s) => (
             <Link
@@ -98,11 +138,106 @@ export default function CrmDashboard() {
         </div>
       </div>
 
+      {/* Today's Follow-ups */}
+      <div className="rounded-xl border border-gray-200 bg-white shadow-sm">
+        <div className="flex items-center justify-between border-b border-gray-100 px-5 py-3">
+          <div className="flex gap-4">
+            <button
+              onClick={() => setActiveTab("today")}
+              className={`text-sm font-semibold ${
+                activeTab === "today" ? "text-orange-600" : "text-gray-500"
+              }`}
+            >
+              Today's Follow-ups
+              {todayFollowUps.length > 0 && (
+                <span className="ml-1 rounded-full bg-orange-100 px-2 py-0.5 text-xs">
+                  {todayFollowUps.length}
+                </span>
+              )}
+            </button>
+            <button
+              onClick={() => setActiveTab("pending")}
+              className={`text-sm font-semibold ${
+                activeTab === "pending" ? "text-orange-600" : "text-gray-500"
+              }`}
+            >
+              Pending
+              {pendingFollowUps.length > 0 && (
+                <span className="ml-1 rounded-full bg-red-100 px-2 py-0.5 text-xs text-red-600">
+                  {pendingFollowUps.length}
+                </span>
+              )}
+            </button>
+          </div>
+        </div>
+        <div className="divide-y divide-gray-100">
+          {activeTab === "today" && todayFollowUps.length === 0 && (
+            <div className="p-5 text-center text-sm text-gray-400">
+              No follow-ups for today.
+            </div>
+          )}
+          {activeTab === "pending" && pendingFollowUps.length === 0 && (
+            <div className="p-5 text-center text-sm text-gray-400">
+              No pending follow-ups.
+            </div>
+          )}
+          {(activeTab === "today" ? todayFollowUps : pendingFollowUps).map((l) => (
+            <div
+              key={l._id}
+              className="flex items-center justify-between px-5 py-3 hover:bg-gray-50"
+            >
+              <Link
+                href={`/admin/dashboard/leads/${l._id}`}
+                className="flex-1"
+              >
+                <div className="text-sm font-medium text-gray-900">
+                  {l.fullName}
+                </div>
+                <div className="text-xs text-gray-500">
+                  {l.phoneNumber} · {l.services || "—"}
+                </div>
+              </Link>
+              <div className="flex items-center gap-3">
+                <div className="text-right">
+                  <span
+                    className={`rounded-full border px-2 py-0.5 text-xs font-medium ${statusColor(l.status)}`}
+                  >
+                    {l.status}
+                  </span>
+                  <div className="mt-1 text-xs text-gray-400">
+                    Follow-up: {formatDate(l.nextFollowUpAt)}
+                  </div>
+                </div>
+                <button
+                  onClick={() => handleMarkFollowedUp(l)}
+                  disabled={markingId === l._id}
+                  className="rounded-lg bg-emerald-500 px-3 py-1.5 text-xs font-medium text-white hover:bg-emerald-600 disabled:opacity-50"
+                >
+                  {markingId === l._id ? "..." : "Mark Done"}
+                </button>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
       {/* Invoice summary */}
       <div className="grid gap-4 md:grid-cols-3">
-        <StatCard label="Total Invoiced" value={formatMoney(totalInvoiced, "BDT")} tone="blue" />
-        <StatCard label="Collected" value={formatMoney(totalPaid, "BDT")} tone="emerald" />
-        <StatCard label="Outstanding" value={formatMoney(totalDue, "BDT")} tone="rose" />
+        <StatCard
+          label="Total Invoiced"
+          value={formatMoney(totalInvoiced, "BDT")}
+          tone="blue"
+        />
+        <StatCard
+          label="Collected"
+          value={formatMoney(totalPaid, "BDT")}
+          tone="emerald"
+        />
+        <StatCard
+          label="Outstanding"
+          value={formatMoney(totalDue, "BDT")}
+          tone="rose"
+        />
       </div>
 
       {/* Recent leads */}
@@ -118,7 +253,9 @@ export default function CrmDashboard() {
         </div>
         <div className="divide-y divide-gray-100">
           {(leadStats?.recent || []).length === 0 && (
-            <div className="p-5 text-center text-sm text-gray-400">No leads yet.</div>
+            <div className="p-5 text-center text-sm text-gray-400">
+              No leads yet.
+            </div>
           )}
           {(leadStats?.recent || []).map((l) => (
             <Link
@@ -127,9 +264,12 @@ export default function CrmDashboard() {
               className="flex items-center justify-between px-5 py-3 hover:bg-gray-50"
             >
               <div>
-                <div className="text-sm font-medium text-gray-900">{l.fullName}</div>
+                <div className="text-sm font-medium text-gray-900">
+                  {l.fullName}
+                </div>
                 <div className="text-xs text-gray-500">
-                  {l.phoneNumber} · {l.services || "—"} · {formatDate(l.createdAt)}
+                  {l.phoneNumber} · {l.services || "—"} ·{" "}
+                  {formatDate(l.createdAt)}
                 </div>
               </div>
               <span

@@ -2,6 +2,10 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { DatePicker } from "@mui/x-date-pickers/DatePicker";
+import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
+import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
+import { Autocomplete, TextField } from "@mui/material";
 import useLeadStore from "@/store/LeadStore";
 import {
   LEAD_STATUSES,
@@ -9,6 +13,21 @@ import {
   PRIORITIES,
   CURRENCIES,
 } from "@/utils/crm";
+
+const SERVICES = [
+  "Website Development",
+  "Digital Marketing",
+  "SEO",
+  "E-commerce Development",
+  "Mobile App Development",
+  "UI/UX Design",
+  "Content Marketing",
+  "Social Media Marketing",
+  "PPC Advertising",
+  "Email Marketing",
+  "Branding",
+  "Other",
+];
 
 const blank = {
   fullName: "",
@@ -19,17 +38,25 @@ const blank = {
   source: "Facebook Ad",
   campaign: "",
   services: "",
+  niche: "",
   budget: "",
   currency: "BDT",
   priority: "Medium",
   status: "New",
   message: "",
-  nextFollowUpAt: "",
+  nextFollowUpAt: null,
 };
 
 export default function LeadForm({ initial = null, onSaved }) {
   const router = useRouter();
-  const [form, setForm] = useState(initial ? { ...blank, ...initial } : blank);
+  const initialForm = initial
+    ? {
+        ...blank,
+        ...initial,
+        nextFollowUpAt: initial.nextFollowUpAt ? new Date(initial.nextFollowUpAt) : null,
+      }
+    : blank;
+  const [form, setForm] = useState(initialForm);
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState(null);
   const { createLead, updateLead } = useLeadStore();
@@ -44,7 +71,7 @@ export default function LeadForm({ initial = null, onSaved }) {
       const payload = {
         ...form,
         budget: form.budget ? Number(form.budget) : 0,
-        nextFollowUpAt: form.nextFollowUpAt || undefined,
+        nextFollowUpAt: form.nextFollowUpAt ? new Date(form.nextFollowUpAt).toISOString().split('T')[0] : undefined,
       };
       const saved = initial
         ? await updateLead(initial._id, payload)
@@ -99,7 +126,20 @@ export default function LeadForm({ initial = null, onSaved }) {
         </div>
         <div>
           <label className={label}>Service Interested In</label>
-          <input className={field} placeholder="e.g. Web development, SEO" value={form.services} onChange={(e) => set("services", e.target.value)} />
+          <Autocomplete
+            freeSolo
+            options={SERVICES}
+            value={form.services || ""}
+            onChange={(_, value) => set("services", value || "")}
+            onInputChange={(_, value) => set("services", value)}
+            renderInput={(params) => (
+              <TextField {...params} placeholder="Select or type a service" className={field.replace("w-full", "")} style={{ padding: 0 }} />
+            )}
+          />
+        </div>
+        <div>
+          <label className={label}>Niche</label>
+          <input className={field} placeholder="e.g. E-commerce, Healthcare, Real Estate" value={form.niche} onChange={(e) => set("niche", e.target.value)} />
         </div>
 
         <div>
@@ -139,7 +179,18 @@ export default function LeadForm({ initial = null, onSaved }) {
 
         <div className="md:col-span-2">
           <label className={label}>Next Follow-up</label>
-          <input className={field} type="datetime-local" value={form.nextFollowUpAt?.slice?.(0,16) || ""} onChange={(e) => set("nextFollowUpAt", e.target.value)} />
+          <LocalizationProvider dateAdapter={AdapterDayjs}>
+            <DatePicker
+              value={form.nextFollowUpAt}
+              onChange={(date) => set("nextFollowUpAt", date)}
+              slotProps={{
+                textField: {
+                  className: field,
+                  placeholder: "Select date",
+                },
+              }}
+            />
+          </LocalizationProvider>
         </div>
 
         <div className="md:col-span-2">

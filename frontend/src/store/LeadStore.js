@@ -14,6 +14,8 @@ const useLeadStore = create((set, get) => ({
   leads: [],
   lead: null,
   stats: null,
+  todayFollowUps: [],
+  pendingFollowUps: [],
   total: 0,
   page: 1,
   pages: 1,
@@ -60,6 +62,30 @@ const useLeadStore = create((set, get) => ({
       set({ stats: res.data });
     } catch (e) {
       set({ error: e?.response?.data?.message || e.message });
+    }
+  },
+
+  fetchTodaysFollowUps: async () => {
+    try {
+      const res = await axios.get(`${apiUrl}/leads/followups/today`, authHeaders());
+      set({ todayFollowUps: res.data.todays || [], pendingFollowUps: res.data.pending || [] });
+    } catch (e) {
+      set({ error: e?.response?.data?.message || e.message });
+    }
+  },
+
+  markFollowedUp: async (id, data) => {
+    try {
+      const res = await axios.patch(`${apiUrl}/leads/${id}/followedup`, data, authHeaders());
+      set((state) => ({
+        todayFollowUps: state.todayFollowUps.filter((l) => l._id !== id),
+        pendingFollowUps: state.pendingFollowUps.filter((l) => l._id !== id),
+        lead: state.lead?._id === id ? res.data.lead : state.lead,
+      }));
+      return res.data.lead;
+    } catch (e) {
+      set({ error: e?.response?.data?.message || e.message });
+      throw e;
     }
   },
 

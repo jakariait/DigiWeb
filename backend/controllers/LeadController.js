@@ -206,6 +206,59 @@ const getLeadStats = asyncHandler(async (req, res) => {
   });
 });
 
+// Get today's follow-ups
+const getTodaysFollowUps = asyncHandler(async (req, res) => {
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+  const tomorrow = new Date(today);
+  tomorrow.setDate(tomorrow.getDate() + 1);
+
+  const [todays, pending] = await Promise.all([
+    LeadModel.find({
+      nextFollowUpAt: { $gte: today, $lt: tomorrow },
+      status: { $nin: ["Won", "Lost"] },
+    })
+      .sort("nextFollowUpAt")
+      .lean(),
+    LeadModel.find({
+      nextFollowUpAt: { $lt: today },
+      status: { $nin: ["Won", "Lost"] },
+    })
+      .sort("nextFollowUpAt")
+      .lean(),
+  ]);
+
+  res.status(200).json({ todays, pending });
+});
+
+// Mark lead as followed up
+const markFollowedUp = asyncHandler(async (req, res) => {
+  const { id } = req.params;
+  const { nextFollowUpAt, notes } = req.body;
+
+  const lead = await LeadModel.findById(id);
+  if (!lead) return res.status(404).json({ message: "Lead not found" });
+
+  lead.activities.push({
+    type: "call",
+    content: notes || "Follow-up completed",
+    outcome: "answered",
+    createdBy: req.admin?._id,
+    createdByName: req.admin?.name,
+  });
+
+  lead.lastContactedAt = new Date();
+
+  if (nextFollowUpAt) {
+    lead.nextFollowUpAt = new Date(nextFollowUpAt);
+  } else {
+    lead.nextFollowUpAt = null;
+  }
+
+  await lead.save();
+  res.status(200).json({ message: "Marked as followed up", lead });
+});
+
 module.exports = {
   createLead,
   getAllLeads,
@@ -216,4 +269,6 @@ module.exports = {
   assignLead,
   deleteLead,
   getLeadStats,
+  getTodaysFollowUps,
+  markFollowedUp,
 };

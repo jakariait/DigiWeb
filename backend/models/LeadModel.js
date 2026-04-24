@@ -49,6 +49,7 @@ const leadSchema = new mongoose.Schema(
 
     // What they want
     services: { type: String, trim: true },
+    niche: { type: String, trim: true },
     budget: { type: Number, default: 0 },
     currency: { type: String, default: "BDT", enum: ["BDT", "USD", "EUR", "INR"] },
     message: { type: String, trim: true },
