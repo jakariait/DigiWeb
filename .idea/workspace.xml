@@ -6,6 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="0b159a5f-3e24-48e7-b59b-3dccf0f96ba7" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,7 +69,7 @@
     &quot;npm.lint.executor&quot;: &quot;Run&quot;,
     &quot;npm.nodemon.executor&quot;: &quot;Run&quot;,
     &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;/Users/jakaria/Library/Application Support/Herd/config/nvm/versions/node/v22.13.1/lib/node_modules/prettier&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;settings.javascript.prettier&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;settings.sync&quot;,
     &quot;ts.external.directory.path&quot;: &quot;/Applications/WebStorm.app/Contents/plugins/javascript-plugin/jsLanguageServicesImpl/external&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
@@ -152,7 +154,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-3bd3a6803838-JavaScript-WS-261.22158.274" />
+        <option value="bundled-js-predefined-d6986cc7102b-31caf2ab9e3c-JavaScript-WS-261.23567.141" />
       </set>
     </attachedChunks>
   </component>
@@ -213,6 +215,18 @@
       <workItem from="1776868405632" duration="2426000" />
       <workItem from="1776941821505" duration="519000" />
       <workItem from="1777026199080" duration="1789000" />
+      <workItem from="1777028129978" duration="4110000" />
+      <workItem from="1777036690319" duration="970000" />
+      <workItem from="1777038412780" duration="1315000" />
+      <workItem from="1777545888777" duration="113000" />
+      <workItem from="1777546167652" duration="68000" />
+      <workItem from="1777546513335" duration="69000" />
+      <workItem from="1777548689762" duration="73000" />
+      <workItem from="1777557616951" duration="34000" />
+      <workItem from="1777631255217" duration="89000" />
+      <workItem from="1777633351455" duration="310000" />
+      <workItem from="1777633950335" duration="597000" />
+      <workItem from="1777638689618" duration="348000" />
     </task>
     <servers />
   </component>

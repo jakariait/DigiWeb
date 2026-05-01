@@ -1,5 +1,5 @@
 export const getWhatsAppLink = (
-  phone = "8801611609288",
+  phone = "8801334705101",
   message = "Hi, I’m interested in your services. Please get back to me."
 ) => {
   const encodedMessage = encodeURIComponent(message);
@@ -7,7 +7,7 @@ export const getWhatsAppLink = (
 };
 
 
-export const getPhoneNumber = () => "tel:+8801611609288";
+export const getPhoneNumber = () => "tel:+8801334705101";
 
 export const getBrandName = () => "DigiWeb";
 

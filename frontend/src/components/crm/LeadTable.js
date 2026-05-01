@@ -98,7 +98,7 @@ export default function LeadTable() {
               <th className="px-4 py-3 text-left">Source</th>
               <th className="px-4 py-3 text-left">Status</th>
               <th className="px-4 py-3 text-left">Priority</th>
-              <th className="px-4 py-3 text-left">Budget</th>
+              <th className="px-4 py-3 text-left">Next Follow-up</th>
               <th className="px-4 py-3 text-left">Created</th>
               <th className="px-4 py-3"></th>
             </tr>
@@ -152,7 +152,7 @@ export default function LeadTable() {
                   </span>
                 </td>
                 <td className="px-4 py-3 text-gray-700">
-                  {l.budget ? formatMoney(l.budget, l.currency) : "—"}
+                  {l.nextFollowUpAt ? formatDate(l.nextFollowUpAt) : "—"}
                 </td>
                 <td className="px-4 py-3 text-gray-500">{formatDate(l.createdAt)}</td>
                 <td className="px-4 py-3 text-right">

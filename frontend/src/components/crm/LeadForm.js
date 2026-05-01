@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
+import dayjs from "dayjs";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { Autocomplete, TextField } from "@mui/material";
 import useLeadStore from "@/store/LeadStore";
@@ -53,7 +54,7 @@ export default function LeadForm({ initial = null, onSaved }) {
     ? {
         ...blank,
         ...initial,
-        nextFollowUpAt: initial.nextFollowUpAt ? new Date(initial.nextFollowUpAt) : null,
+        nextFollowUpAt: initial.nextFollowUpAt ? dayjs(initial.nextFollowUpAt) : null,
       }
     : blank;
   const [form, setForm] = useState(initialForm);
@@ -71,7 +72,7 @@ export default function LeadForm({ initial = null, onSaved }) {
       const payload = {
         ...form,
         budget: form.budget ? Number(form.budget) : 0,
-        nextFollowUpAt: form.nextFollowUpAt ? new Date(form.nextFollowUpAt).toISOString().split('T')[0] : undefined,
+        nextFollowUpAt: form.nextFollowUpAt ? dayjs(form.nextFollowUpAt).format('YYYY-MM-DD') : undefined,
       };
       const saved = initial
         ? await updateLead(initial._id, payload)
