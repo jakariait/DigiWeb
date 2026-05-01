@@ -4,7 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0b159a5f-3e24-48e7-b59b-3dccf0f96ba7" name="Changes" comment="" />
+    <list default="true" id="0b159a5f-3e24-48e7-b59b-3dccf0f96ba7" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/backend/controllers/CaseStudyController.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/models/CaseStudyModel.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/CaseStudyService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/routes/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/routes/api.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -36,6 +42,9 @@
   &quot;associatedIndex&quot;: 6
 }</component>
   <component name="ProjectId" id="2wSCnaxkQO7BOmDhQJd7xvXVtIm" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -86,7 +95,7 @@
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.build">
+  <component name="RunManager" selected="npm.nodemon">
     <configuration name="build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/frontend/package.json" />
       <command value="run" />
@@ -139,9 +148,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.build" />
-        <item itemvalue="npm.dev" />
         <item itemvalue="npm.nodemon" />
+        <item itemvalue="npm.dev" />
+        <item itemvalue="npm.build" />
         <item itemvalue="npm.lint" />
         <item itemvalue="npm.clean-unused-images" />
       </list>
@@ -222,7 +231,8 @@
       <workItem from="1777631255217" duration="89000" />
       <workItem from="1777633351455" duration="310000" />
       <workItem from="1777633950335" duration="597000" />
-      <workItem from="1777638689618" duration="775000" />
+      <workItem from="1777638689618" duration="1253000" />
+      <workItem from="1777657785942" duration="2070000" />
     </task>
     <servers />
   </component>

@@ -21,6 +21,7 @@ const links = [
   },
 
   { name: "Portfolio", href: "/our-portfolio" },
+  { name: "Case Study", href: "/casestudies" },
   { name: "Clients", href: "/our-clients" },
   { name: "About Us", href: "/about-us" },
   { name: "Contact", href: "/contact-us" },
@@ -105,7 +106,7 @@ const HeaderServer = () => {
                 <Link href={link.href}>{link.name}</Link>
                 <span className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-red-500 transition-all duration-300 ease-in-out group-hover:w-full" />
               </li>
-            )
+            ),
           )}
         </ul>
 
@@ -165,7 +166,7 @@ const HeaderServer = () => {
                 </Link>
                 <span className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-red-500 transition-all duration-300 ease-in-out group-hover:w-full" />
               </li>
-            )
+            ),
           )}
           <li className="relative group">
             <a

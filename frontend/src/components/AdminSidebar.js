@@ -20,6 +20,7 @@ const AdminHeader = () => {
     { name: "Invoices", path: "/admin/dashboard/invoices" },
     { name: "Brands", path: "/admin/dashboard/brands" },
     { name: "Portfolios", path: "/admin/dashboard/portfolios" },
+    { name: "Case Studies", path: "/admin/dashboard/casestudies" },
   ];
 
   const handleLogout = async () => {
