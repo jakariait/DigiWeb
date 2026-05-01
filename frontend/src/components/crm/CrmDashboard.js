@@ -148,7 +148,7 @@ export default function CrmDashboard() {
                 activeTab === "today" ? "text-orange-600" : "text-gray-500"
               }`}
             >
-              Today's Follow-ups
+Today&apos;s Follow-ups
               {todayFollowUps.length > 0 && (
                 <span className="ml-1 rounded-full bg-orange-100 px-2 py-0.5 text-xs">
                   {todayFollowUps.length}
